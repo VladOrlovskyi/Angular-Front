@@ -1,0 +1,16 @@
+<form #chatForm="ngForm" (ngSubmit)="createChat(chatForm)">
+  <label>NAME CHAT:</label>
+  <input type="text" ngModel name="name">
+  <input type="submit">
+</form>
+
+<div *ngFor=" let chat of chats">
+<app-single-chat
+  [chatInput]="chat"
+>
+</app-single-chat>
+  <button
+    style="background:darkmagenta"
+    (click)="removeChat(chat)"
+  >DELETE</button>
+</div>

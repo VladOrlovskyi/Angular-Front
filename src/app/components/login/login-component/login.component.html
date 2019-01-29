@@ -1,0 +1,24 @@
+<div *ngIf="!principalUser">
+  <form #loginForm="ngForm" (ngSubmit)="loginUser(loginForm)">
+    <label>Phone</label>
+    <input type="text" ngModel name="phone">
+    <label>Password</label>
+    <input type="password" ngModel name="password">
+    <input type="submit" value="LOGIN">
+  </form>
+  <form #registrForm="ngForm" (ngSubmit)="registrUser(registrForm)">
+    <label>Phone</label>
+    <input type="text" ngModel name="phone">
+    <label>Name</label>
+    <input type="text" ngModel name="name">
+    <label>Password</label>
+    <input type="password" ngModel name="password">
+    <input type="submit" value="Registration">
+  </form>
+  <input type="submit" value="Logout" (click)="logoutUser()">
+</div>
+<div *ngIf="principalUser"><h3>Hello, {{user.name}}!</h3>
+  <input type="button" value="Chat" [routerLink]="'/chats'">
+  <input type="submit" value="Logout" (click)="logoutUser()">
+</div>
+

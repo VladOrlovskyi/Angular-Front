@@ -1,0 +1,20 @@
+<form #messegeForm="ngForm" (ngSubmit)="createMessege(messegeForm)">
+  <label>USER:</label>
+  <input type="text" ngModel name= "user">
+  <label>CHAT:</label>
+  <input type="text" ngModel name= "chat">
+  <label>TEXT:</label>
+  <input type="text" ngModel name= "text">
+  <input type="submit">
+</form>
+
+<div *ngFor="let messege of messeges">
+<app-single-messege
+  [messegeInput]="messege"
+>
+</app-single-messege>
+  <button
+    style="background: aqua"
+    (click)="removeMessege(messege)"
+  >DELETE</button>
+</div>

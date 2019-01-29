@@ -1,0 +1,13 @@
+<ul>
+  <li>
+    <h1>
+      <a [routerLink]="'/single-user/' + userInput._id"
+      [queryParams]="userInput"
+      >
+      {{userInput.name}}
+      </a>
+    </h1>
+    <h4>{{userInput.phone}}</h4>
+    <h4>{{userInput._id}}</h4>
+  </li>
+</ul>

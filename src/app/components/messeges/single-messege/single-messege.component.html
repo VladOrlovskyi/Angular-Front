@@ -1,0 +1,14 @@
+<ul>
+  <li>
+    <h1>
+      <a [routerLink]="'/single-messege/' + messegeInput._id"
+      [queryParams]="messegeInput"
+      >
+        {{messegeInput.text}}
+      </a>
+    </h1>
+    <h5>{{messegeInput.user}}</h5>
+    <h4>{{messegeInput.chat}}</h4>
+    <h6>{{messegeInput.date}}</h6>
+  </li>
+</ul>

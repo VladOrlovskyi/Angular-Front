@@ -1,0 +1,15 @@
+<ul>
+  <li>
+    <h1>
+      <a [routerLink]="'/single-chat/' + chatInput._id"
+      [queryParams]="chatInput"
+      >
+      {{chatInput.name}}
+      </a>
+    </h1>
+    <h1>{{chatInput.users}}</h1>
+  </li>
+</ul>
+
+
+<div style="background: aqua">single-chat</div>

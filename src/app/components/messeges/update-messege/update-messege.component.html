@@ -1,0 +1,11 @@
+<form *ngIf="messege" #messegeForm="ngForm" (ngSubmit)="updateMessege(messegeForm)">
+  <label>TEXT:</label>
+  <input type="text" ([ngModel])="messege.text" name="text">
+  <label>USER:</label>
+  <input type="text" ([ngModel])="messege.user" name="user">
+  <label>CHAT:</label>
+  <input type="text" ([ngModel])="messege.chat" name="chat">
+  <label>DATE:</label>
+  <input type="text" ([ngModel])="messege.date" name="date">
+  <input type="submit">
+</form>

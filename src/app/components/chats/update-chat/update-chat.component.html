@@ -1,0 +1,8 @@
+<form *ngIf="chat" #chatForm="ngForm" (ngSubmit)="updateChat(chatForm)">
+  <label>NAME:</label>
+  <input type="text" ([ngModel])="chat.name" name="name">
+  <label>USERS:</label>
+  <input type="text" ([ngModel])="chat.users" name="users">
+  <input type="submit">
+</form>
+<div style="background:teal">update-chat</div>
