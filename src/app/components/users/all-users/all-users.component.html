@@ -7,10 +7,21 @@
 </form>-->
 
 <div *ngFor="let user of users">
-  <app-single-user
-    [userInput]="user"
-  >
-  </app-single-user>
+
+  <ul>
+    <li>
+      <h1>
+        <a [routerLink]="'/single-user/' + user._id"
+           [queryParams]="user"
+        >
+          {{user.name}}
+        </a>
+      </h1>
+      <h4>{{user.phone}}</h4>
+      <h4>{{user._id}}</h4>
+    </li>
+  </ul>
+
   <button
     style="background: lawngreen"
     (click)="removeUser(user)"

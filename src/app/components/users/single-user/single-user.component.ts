@@ -7,8 +7,8 @@ import {User} from '../../../models/User';
   styleUrls: ['./single-user.component.css']
 })
 export class SingleUserComponent implements OnInit {
-
   @Input() userInput: User = new User('', '');
+
   constructor() {
   }
 

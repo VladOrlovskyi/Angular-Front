@@ -1,5 +1,7 @@
 import {Component, Input, OnInit} from '@angular/core';
-import {Chat} from '../../../models/Chat';
+import {NgForm} from '@angular/forms';
+import {MessegeService} from '../../../services/messege.service';
+import {Messege} from '../../../models/Messege';
 
 @Component({
   selector: 'app-single-chat',
@@ -7,12 +9,28 @@ import {Chat} from '../../../models/Chat';
   styleUrls: ['./single-chat.component.css']
 })
 export class SingleChatComponent implements OnInit {
+  messages: Messege[] = [];
 
-  @Input() chatInput: Chat = new Chat('');
-
-  constructor() { }
+  constructor(
+    private messegeService: MessegeService
+  ) {
+  }
 
   ngOnInit() {
+
+  }
+
+  inChat() {
+  }
+
+  leaveChat() {
+
+  }
+
+  sendMessage(messageForm: NgForm) {
+    this.messegeService.create(messageForm.value).subscribe((newMessage) => {
+      this.messages.push(newMessage);
+    });
   }
 
 }

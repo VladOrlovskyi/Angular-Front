@@ -1,15 +1,19 @@
-<ul>
-  <li>
-    <h1>
-      <a [routerLink]="'/single-chat/' + chatInput._id"
-      [queryParams]="chatInput"
-      >
-      {{chatInput.name}}
-      </a>
-    </h1>
-    <h1>{{chatInput.users}}</h1>
-  </li>
-</ul>
-
-
 <div style="background: aqua">single-chat</div>
+<div>
+  <input type="button" value="In Chat" (click)="inChat()">
+  <input type="button" value="Leave Chat" (click)="leaveChat()">
+</div>
+<h3 class="header">Chat:</h3>
+<form id="chat" #messageForm="ngForm">
+    <ul *ngFor="let messag of messages">
+      <li>{{messag.text}}</li>
+      <li>{{messag.chat}}</li>
+      <li>{{messag.user}}</li>
+      <li>{{messag.date}}</li>
+      <li>{{messag._id}}</li>
+    </ul>
+</form>
+<input type="text" class="message-input">
+<button class="message-button" (click)="sendMessage(messageForm)">Send</button>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/2.2.0/socket.io.js"></script>

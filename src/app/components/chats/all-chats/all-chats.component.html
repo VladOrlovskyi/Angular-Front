@@ -5,12 +5,23 @@
 </form>
 
 <div *ngFor=" let chat of chats">
-<app-single-chat
-  [chatInput]="chat"
->
-</app-single-chat>
+
+  <ul>
+    <li>
+      <h1>
+        <a [routerLink]="'/single-chat/' + chat._id"
+           [queryParams]="chat"
+        >
+          {{chat.name}}
+        </a>
+      </h1>
+      <h1>{{chat._id}}</h1>
+    </li>
+  </ul>
+
   <button
     style="background:darkmagenta"
     (click)="removeChat(chat)"
-  >DELETE</button>
+  >DELETE
+  </button>
 </div>
